@@ -26,7 +26,6 @@ function updateIcon(tabId, isSuitable) {
 
 // Function to check if a website is suitable
 function isSuitableWebsite(url) {
-  // Add your logic here, e.g., checking if the URL contains a specific keyword
   return (
     url.includes("www.youtube.com/watch?v=") ||
     url.includes("www.youtube.com/shorts")
