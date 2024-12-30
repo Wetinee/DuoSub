@@ -11,20 +11,18 @@ CORS(app)  # Enable CORS for all routes
 
 
 def simplify_url(url):
-    # Parse the URL
     parsed_url = urlparse(url)
 
-    # Extract query parameters
     query_params = parse_qs(parsed_url.query)
 
-    # Keep only 'v' and 'ab_channel' parameters
+    # Keep only 'v' and 'ab_channel' params
     filtered_params = {
         key: value[0]
         for key, value in query_params.items()
         if key in ["v", "ab_channel"]
     }
 
-    # Reconstruct the URL with filtered parameters
+    # Reconstruct the URL
     new_query = urlencode(filtered_params)
     simplified_url = urlunparse(parsed_url._replace(query=new_query))
 
@@ -116,10 +114,8 @@ def download():
                     os.path.join(timestamp, f"{lang2}.vtt"),
                 )
 
-        # Combine subtitles
         combined_file_path = combine_subtitles(timestamp, lang1, lang2)
 
-        # Return the combined subtitle file
         return send_file(
             combined_file_path,
             as_attachment=True,
