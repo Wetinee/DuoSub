@@ -1,0 +1,67 @@
+/* popup.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+
+#container {
+    padding: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#captions {
+    margin: 10px 0;
+    max-height: 150px;
+    overflow-y: auto;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.caption-item {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.caption-item:hover {
+    background-color: #f0f0f0;
+}
+
+.caption-item.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+#selected {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+#firstSelected, #secondSelected {
+    background-color: transparent;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #007bff;
+}
